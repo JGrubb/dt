@@ -1,0 +1,90 @@
+@import lib
+@import boilerplate
+$dark_blue: #00144c
+
+html
+  padding: 0
+  margin: 0
+  
+p
+  margin-top: 0em
+  
+
+body 
+  font-family: 'lucida grande', sans-serif
+  font-size: 115%
+  line-height: 1.4
+  height: 100%
+  background: url(../img/bg.jpg) center top repeat
+
+.wrapper 
+  @include container
+
+header
+  padding: 3em 0
+  #logo 
+    width: 394px
+    margin: 0 auto
+    padding: 3em
+    background: rgba(255,255,255,0.9)
+    border: 1px solid #bbb
+    max-width: 100%
+    @include radius(8px)
+    @include shadow(inset 0 0 50px #ccc)
+    img
+      max-width: 100%
+      
+
+#main
+  color: #f4f4f4
+  #top
+    @include grid(12)
+    h1, h2
+      text-align: center
+  #left
+    @include grid(6)
+    .inner
+      padding: 0 2em
+  #right
+    @include grid(6)
+    .inner
+      padding: 0 2em
+    #form-div
+      padding: 2em
+      background: rgba(255,255,255,0.8)
+      border: 1px solid #ccc
+      @include radius(2px)
+      .form-item
+        position: relative
+        &.text
+          margin-bottom: 1em
+          input
+            width: 98%
+            border: 1px solid #999
+            padding: 1% 1%
+            @include radius(3px)
+            font-size: 1.2em
+          label
+            position: absolute
+            top: 5px
+            left: 5px
+            color: #888
+        &.submit
+          input#form-submit
+            background: #155377
+            @include gradient(#155377, darken(#155377, 10%))
+            color: white
+            border: 1px solid #999
+            font-size: 1.3em
+            padding: 0.25em 0.5em
+            @include radius(3px)
+            &:hover
+              background: darken(#155377, 5%)
+              @include gradient(darken(#155377, 5%), darken(#155377, 15%))
+              @include shadow(0 0 5px #bbb)
+    #messages
+      margin-top: 1em
+
+
+@import mobile
+@import print
